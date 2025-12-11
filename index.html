@@ -4,75 +4,152 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portafolio - Profesor Godoy</title>
+
   <style>
+    /* ======================
+       ESTILOS GENERALES
+    ====================== */
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background: #0e0e0e;
+      background: linear-gradient(180deg, #0e0e0e, #1b1b1b, #0e0e0e);
       color: #fff;
+      overflow-x: hidden;
     }
+
+    * {
+      scroll-behavior: smooth;
+    }
+
+    /* ======================
+       HEADER
+    ====================== */
     header {
-      background: linear-gradient(135deg, #1a73e8, #673ab7);
-      padding: 60px 20px;
+      background: linear-gradient(135deg, #1a73e8, #673ab7, #8e24aa);
+      padding: 90px 20px;
       text-align: center;
+      border-bottom: 3px solid rgba(255,255,255,0.1);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+      animation: fadeDown 1.2s ease-out;
     }
+
     header h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       margin: 0;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
+
     header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
+      font-size: 1.3rem;
+      opacity: 0.95;
+      margin-top: 10px;
     }
+
+    /* ======================
+       NAV
+    ====================== */
     nav {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      background: #111;
+      gap: 25px;
+      background: rgba(20,20,20,0.8);
+      backdrop-filter: blur(10px);
       padding: 15px 0;
       position: sticky;
       top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      animation: fadeDown 1.5s ease-out;
     }
+
     nav a {
       color: white;
       text-decoration: none;
-      padding: 10px 18px;
+      padding: 10px 22px;
       background: #222;
-      border-radius: 8px;
-      transition: 0.3s;
+      border-radius: 10px;
+      font-weight: 500;
+      transition: 0.3s ease;
     }
+
     nav a:hover {
       background: #1a73e8;
+      transform: translateY(-2px);
+      box-shadow: 0 0 12px #1a73e8;
     }
+
+    /* ======================
+       SECCIONES
+    ====================== */
     section {
-      max-width: 900px;
+      max-width: 950px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 50px 25px;
+      animation: fadeIn 1.5s ease-out;
     }
+
     h2 {
-      border-left: 5px solid #1a73e8;
-      padding-left: 10px;
+      border-left: 6px solid #1a73e8;
+      padding-left: 12px;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
     }
+
+    /* ======================
+       CARDS
+    ====================== */
     .card {
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 12px;
+      background: rgba(30,30,30,0.8);
+      backdrop-filter: blur(12px);
+      padding: 25px;
+      border-radius: 15px;
       margin-top: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      transition: 0.3s ease;
     }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 25px rgba(26,115,232,0.3);
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    /* ======================
+       FOOTER
+    ====================== */
     footer {
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 25px;
       background: #111;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* ======================
+       ANIMACIONES
+    ====================== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <h1>Profesor Carlos Daniel Godoy</h1>
-  <p>Técnico desarrollador | Docente de Informática | Proyectos Educativos e Innovación</p>
+  <p>Técnico desarrollador | Docente de Informática | Innovación Educativa & Proyectos Tecnológicos</p>
 </header>
 
 <nav>
@@ -93,9 +170,9 @@
   <h2>Trabajos Realizados</h2>
   <div class="card">
     <ul>
-      <li>Desarrollo de páginas web para pymes</li>
-      <li>Proyectos escolares: incubadora Arduino, IA educativa</li>
-      <li>Material docente: guías, PDFs, exámenes y libros</li>
+      <li>Desarrollo de páginas web profesionales para pymes</li>
+      <li>Proyectos escolares destacados: incubadora Arduino, AI educativa</li>
+      <li>Material docente: guías, PDFs, exámenes y libros educativos</li>
     </ul>
   </div>
 </section>
@@ -103,7 +180,7 @@
 <section id="investigaciones">
   <h2>Investigaciones</h2>
   <div class="card">
-    <p>Propuestas pedagógicas con Inteligencia Artificial, trabajos de integración en escuelas técnicas, estudios sobre implementación tecnológica en ámbitos rurales.</p>
+    <p>Propuestas pedagógicas con IA, trabajos integradores en escuelas técnicas y estudios sobre tecnología aplicada en ámbitos rurales.</p>
   </div>
 </section>
 
@@ -111,8 +188,8 @@
   <h2>Proyectos Destacados</h2>
   <div class="card">
     <ul>
-      <li>Proyecto de Incubadora Inteligente – EXPOTEC San Vicente</li>
-      <li>Sistema de triage con IA para atención rápida</li>
+      <li>Incubadora Inteligente – EXPOTEC San Vicente</li>
+      <li>Sistema de triage con inteligencia artificial para atención rápida</li>
       <li>Libro “Inteligencia Artificial para Humanos Comunes”</li>
     </ul>
   </div>
