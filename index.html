@@ -12,8 +12,8 @@
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(180deg, #0e0e0e, #1b1b1b, #0e0e0e);
-      color: #fff;
+      background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+      color: #f5f5f5;
       overflow-x: hidden;
     }
 
@@ -25,11 +25,10 @@
        HEADER
     ====================== */
     header {
-      background: linear-gradient(135deg, #1a73e8, #673ab7, #8e24aa);
-      padding: 90px 20px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff, #6a11cb);
+      padding: 100px 20px;
       text-align: center;
-      border-bottom: 3px solid rgba(255,255,255,0.1);
-      box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 6px 35px rgba(0,0,0,0.6);
       animation: fadeDown 1.2s ease-out;
     }
 
@@ -37,13 +36,12 @@
       font-size: 3.2rem;
       margin: 0;
       letter-spacing: 1px;
-      text-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
     header p {
       font-size: 1.3rem;
-      opacity: 0.95;
       margin-top: 10px;
+      opacity: 0.95;
     }
 
     /* ======================
@@ -53,69 +51,99 @@
       display: flex;
       justify-content: center;
       gap: 25px;
-      background: rgba(20,20,20,0.8);
+      background: rgba(15,15,15,0.85);
       backdrop-filter: blur(10px);
       padding: 15px 0;
       position: sticky;
       top: 0;
       z-index: 20;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      animation: fadeDown 1.5s ease-out;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       padding: 10px 22px;
-      background: #222;
-      border-radius: 10px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      border-radius: 12px;
       font-weight: 500;
       transition: 0.3s ease;
     }
 
     nav a:hover {
-      background: #1a73e8;
-      transform: translateY(-2px);
-      box-shadow: 0 0 12px #1a73e8;
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba(37,117,252,0.8);
     }
 
     /* ======================
        SECCIONES
     ====================== */
     section {
-      max-width: 950px;
+      max-width: 1000px;
       margin: auto;
-      padding: 50px 25px;
+      padding: 55px 25px;
       animation: fadeIn 1.5s ease-out;
     }
 
     h2 {
-      border-left: 6px solid #1a73e8;
+      border-left: 6px solid #00c6ff;
       padding-left: 12px;
-      font-size: 1.8rem;
-      margin-bottom: 20px;
+      font-size: 1.9rem;
+      margin-bottom: 25px;
     }
 
     /* ======================
        CARDS
     ====================== */
     .card {
-      background: rgba(30,30,30,0.8);
+      background: rgba(255,255,255,0.08);
       backdrop-filter: blur(12px);
-      padding: 25px;
-      border-radius: 15px;
-      margin-top: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
       transition: 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 25px rgba(26,115,232,0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0,198,255,0.5);
     }
 
     ul li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+    }
+
+    /* ======================
+       BOTÓN TP
+    ====================== */
+    .tp-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .tp-btn {
+      display: inline-block;
+      padding: 14px 35px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(0,198,255,0.6);
+      transition: 0.3s ease;
+    }
+
+    .tp-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 35px rgba(0,198,255,0.9);
+    }
+
+    .tp-link {
+      display: block;
+      margin-top: 15px;
+      color: #aeeaff;
+      text-decoration: underline;
+      font-size: 0.95rem;
     }
 
     /* ======================
@@ -124,10 +152,10 @@
     footer {
       text-align: center;
       padding: 25px;
-      background: #111;
-      margin-top: 50px;
+      background: rgba(0,0,0,0.6);
+      margin-top: 60px;
       font-size: 0.9rem;
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
     /* ======================
@@ -149,7 +177,7 @@
 
 <header>
   <h1>Profesor Carlos Daniel Godoy</h1>
-  <p>Técnico desarrollador | Docente de Informática | Innovación Educativa & Proyectos Tecnológicos</p>
+  <p>Técnico Desarrollador | Docente de Informática | Innovación Educativa</p>
 </header>
 
 <nav>
@@ -162,7 +190,11 @@
 <section id="perfil">
   <h2>Perfil Profesional</h2>
   <div class="card">
-    <p>Soy Técnico Desarrollador y docente con más de 10 años de experiencia en informática. Me especializo en bases de datos, sistemas operativos, hardware, programación, NTICx e implementación de proyectos tecnológicos en escuelas rurales y urbanas. También desarrollo sitios web para pymes y emprendimientos.</p>
+    <p>
+      Técnico Desarrollador y docente con más de 10 años de experiencia en informática.
+      Especializado en bases de datos, hardware, programación, NTICx y proyectos tecnológicos
+      en escuelas rurales y urbanas.
+    </p>
   </div>
 </section>
 
@@ -170,9 +202,9 @@
   <h2>Trabajos Realizados</h2>
   <div class="card">
     <ul>
-      <li>Desarrollo de páginas web profesionales para pymes</li>
-      <li>Proyectos escolares destacados: incubadora Arduino, AI educativa</li>
-      <li>Material docente: guías, PDFs, exámenes y libros educativos</li>
+      <li>Desarrollo de sitios web para pymes y emprendimientos</li>
+      <li>Proyectos escolares con Arduino e Inteligencia Artificial</li>
+      <li>Material didáctico: guías, PDFs, exámenes y libros</li>
     </ul>
   </div>
 </section>
@@ -180,7 +212,10 @@
 <section id="investigaciones">
   <h2>Investigaciones</h2>
   <div class="card">
-    <p>Propuestas pedagógicas con IA, trabajos integradores en escuelas técnicas y estudios sobre tecnología aplicada en ámbitos rurales.</p>
+    <p>
+      Propuestas pedagógicas con IA, estudios sobre educación tecnológica
+      y experiencias en contextos rurales.
+    </p>
   </div>
 </section>
 
@@ -189,15 +224,22 @@
   <div class="card">
     <ul>
       <li>Incubadora Inteligente – EXPOTEC San Vicente</li>
-      <li>Sistema de triage con inteligencia artificial para atención rápida</li>
+      <li>Sistema de triage con Inteligencia Artificial</li>
       <li>Libro “Inteligencia Artificial para Humanos Comunes”</li>
     </ul>
   </div>
+
+  <!-- BOTÓN TP 1 + PDF -->
+  <div class="tp-container">
+    <a class="tp-btn" href="TP0-Conceptos Basicos (1).pdf" target="_blank">TP 1</a>
+    <a class="tp-link" href="TP0-Conceptos Basicos (1).pdf" target="_blank">
+      Ver PDF – Conceptos Básicos
+    </a>
+  </div>
 </section>
-<a href="TP0-Conceptos Basicos (1).pdf" target="_blank">Ver PDF</a>
 
 <footer>
-  © 2025 - Profesor Carlos Daniel Godoy
+  © 2025 – Profesor Carlos Daniel Godoy
 </footer>
 
 </body>
