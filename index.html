@@ -5,9 +5,6 @@
 <title>Sistema de Corrección Docente</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ======================================================
-     CAPA DE PRESENTACIÓN – ESTILOS (CSS)
-====================================================== -->
 <style>
 body{
   margin:0;
@@ -59,8 +56,19 @@ section{
   margin-top:10px;
 }
 
-.controls button{
+.controls button, .controls a{
   margin-right:10px;
+  padding:5px 10px;
+  border-radius:5px;
+  text-decoration:none;
+  color:white;
+  background:#0072ff;
+  border:none;
+  cursor:pointer;
+}
+
+.controls a:hover, .controls button:hover{
+  background:#00c6ff;
 }
 
 input[type="date"]{
@@ -94,39 +102,32 @@ input[type="date"]{
 <script>
 const datos = {
   presentaciones: [
-    { id:1, nombre:"TP 1", estado:null, fecha:"", entregado:false },
-    { id:2, nombre:"TP 2", estado:null, fecha:"", entregado:false },
-    { id:3, nombre:"TP 3", estado:null, fecha:"", entregado:false }
+    { id:1, nombre:"TP 1", estado:null, fecha:"", archivo:"archivos/TP1.pdf" },
+    { id:2, nombre:"TP 2", estado:null, fecha:"", archivo:"archivos/TP2.pdf" },
+    { id:3, nombre:"TP 3", estado:null, fecha:"", archivo:"archivos/TP3.pdf" }
   ],
   carpeta: [
-    { id:101, nombre:"Introducción", estado:null, fecha:"", entregado:false },
-    { id:102, nombre:"Organigrama", estado:null, fecha:"", entregado:false },
-    { id:103, nombre:"Planteo del Problema", estado:null, fecha:"", entregado:false }
+    { id:101, nombre:"Introducción", estado:null, fecha:"", archivo:"archivos/Introduccion.pdf" },
+    { id:102, nombre:"Organigrama", estado:null, fecha:"", archivo:"archivos/Organigrama.pdf" },
+    { id:103, nombre:"Planteo del Problema", estado:null, fecha:"", archivo:"archivos/PlanteoProblema.pdf" }
   ]
 };
 </script>
 
-<!-- ======================================================
-     CAPA DE ACCESO A DATOS
-====================================================== -->
 <script>
 function obtenerItems(tipo){
   return datos[tipo];
 }
 
-function actualizarItem(tipo,id,nuevoEstado,nuevaFecha,nuevoEntregado){
+function actualizarItem(tipo,id,nuevoEstado,nuevaFecha){
   const item = datos[tipo].find(i => i.id === id);
   if(item){
     if(nuevoEstado !== null) item.estado = nuevoEstado;
     if(nuevaFecha !== null) item.fecha = nuevaFecha;
-    if(nuevoEntregado !== null) item.entregado = nuevoEntregado;
   }
 }
 </script>
 
-<!-- ======================================================
-     CAPA DE LÓGICA DE NEGOCIO
-====================================================== -->
 <script>
 function mostrarSeccion(seccion){
   document.getElementById("presentaciones").style.display = "none";
@@ -152,9 +153,7 @@ function renderizar(tipo){
         Fecha entrega:
         <input type="date" value="${item.fecha}"
                onchange="cambiarFecha('${tipo}',${item.id},this.value)">
-        <button onclick="entregar('${tipo}',${item.id})">
-          ${item.entregado ? "✅ Entregado" : "📤 Entregar"}
-        </button>
+        <a href="${item.archivo}" target="_blank">📤 Entregar</a>
       </div>
     `;
 
@@ -162,23 +161,16 @@ function renderizar(tipo){
   });
 }
 
-// Marcar estado completo/incompleto
 function marcarEstado(tipo,id,estado){
-  actualizarItem(tipo,id,estado,null,null);
+  actualizarItem(tipo,id,estado,null);
   renderizar(tipo);
 }
 
-// Cambiar fecha
 function cambiarFecha(tipo,id,fecha){
-  actualizarItem(tipo,id,null,fecha,null);
-}
-
-// Marcar entrega del estudiante
-function entregar(tipo,id){
-  actualizarItem(tipo,id,null,null,true);
-  renderizar(tipo);
+  actualizarItem(tipo,id,null,fecha);
 }
 </script>
 
 </body>
 </html>
+
