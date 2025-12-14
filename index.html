@@ -6,36 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* =======================
-   ESTILOS GENERALES
-======================= */
 body{
   margin:0;
   font-family:"Segoe UI",sans-serif;
   background:linear-gradient(180deg,#0f2027,#203a43,#2c5364);
   color:#fff;
 }
-
-/* =======================
-   HEADER
-======================= */
 header{
   padding:90px 20px;
   text-align:center;
   background:linear-gradient(135deg,#00c6ff,#0072ff,#6a11cb);
-  box-shadow:0 6px 30px rgba(0,0,0,0.6);
+  box-shadow:0 6px 30px rgba(0,0,0,.6);
 }
 header h1{
-  font-size:2.7rem;
+  font-size:2.6rem;
 }
 header p{
   font-size:1.2rem;
   opacity:.9;
 }
-
-/* =======================
-   NAV
-======================= */
 nav{
   display:flex;
   justify-content:center;
@@ -59,10 +48,6 @@ nav a:hover{
   transform:translateY(-3px);
   box-shadow:0 0 15px rgba(37,117,252,.9);
 }
-
-/* =======================
-   SECCIONES
-======================= */
 section{
   max-width:1000px;
   margin:auto;
@@ -73,10 +58,6 @@ h2{
   padding-left:15px;
   margin-bottom:30px;
 }
-
-/* =======================
-   CARD
-======================= */
 .card{
   background:rgba(255,255,255,.08);
   backdrop-filter:blur(12px);
@@ -84,10 +65,6 @@ h2{
   border-radius:18px;
   box-shadow:0 0 25px rgba(0,0,0,.6);
 }
-
-/* =======================
-   BOTONES
-======================= */
 .btn-container{
   display:flex;
   flex-wrap:wrap;
@@ -109,17 +86,6 @@ h2{
   transform:scale(1.08);
   box-shadow:0 0 35px rgba(0,198,255,.9);
 }
-
-/* =======================
-   PRESENTACIONES (JS)
-======================= */
-#presentaciones{
-  display:none;
-}
-
-/* =======================
-   FOOTER
-======================= */
 footer{
   text-align:center;
   padding:25px;
@@ -143,21 +109,17 @@ footer{
 </nav>
 
 <section id="inicio">
-  <h2>Contenido del Proyecto</h2>
+  <h2>Inicio</h2>
   <div class="card">
-    <p>
-      Espacio destinado a los trabajos prácticos, carpeta del proyecto
-      y desarrollos de software o páginas web.
-    </p>
-
+    <p>Acceso general al contenido del proyecto.</p>
     <div class="btn-container">
-      <a class="btn" href="#" target="_blank">📁 Carpeta de Proyecto</a>
+      <a class="btn" onclick="mostrarCarpeta()">📁 Carpeta de Proyecto</a>
       <a class="btn" href="#" target="_blank">💻 Software / Página Web</a>
     </div>
   </div>
 </section>
 
-<section id="presentaciones">
+<section id="presentaciones" style="display:none;">
   <h2>Presentaciones – Trabajos Prácticos</h2>
   <div class="card">
     <div class="btn-container">
@@ -175,36 +137,69 @@ footer{
   </div>
 </section>
 
+<section id="carpeta" style="display:none;">
+  <h2>📁 Carpeta de Proyecto</h2>
+  <div class="card">
+    <div class="btn-container">
+      <a class="btn" href="#" target="_blank">📘 Introducción</a>
+      <a class="btn" href="#" target="_blank">🧩 Organigrama</a>
+      <a class="btn" href="#" target="_blank">❓ Problema</a>
+      <a class="btn" href="#" target="_blank">📝 Planteo del Problema</a>
+      <a class="btn" href="#" target="_blank">🧠 Formulación del Problema</a>
+      <a class="btn" href="#" target="_blank">📍 Delimitación del Problema</a>
+
+      <!-- 20 BOTONES PENDIENTES -->
+      <a class="btn" href="#">Pendiente 1</a>
+      <a class="btn" href="#">Pendiente 2</a>
+      <a class="btn" href="#">Pendiente 3</a>
+      <a class="btn" href="#">Pendiente 4</a>
+      <a class="btn" href="#">Pendiente 5</a>
+      <a class="btn" href="#">Pendiente 6</a>
+      <a class="btn" href="#">Pendiente 7</a>
+      <a class="btn" href="#">Pendiente 8</a>
+      <a class="btn" href="#">Pendiente 9</a>
+      <a class="btn" href="#">Pendiente 10</a>
+      <a class="btn" href="#">Pendiente 11</a>
+      <a class="btn" href="#">Pendiente 12</a>
+      <a class="btn" href="#">Pendiente 13</a>
+      <a class="btn" href="#">Pendiente 14</a>
+      <a class="btn" href="#">Pendiente 15</a>
+      <a class="btn" href="#">Pendiente 16</a>
+      <a class="btn" href="#">Pendiente 17</a>
+      <a class="btn" href="#">Pendiente 18</a>
+      <a class="btn" href="#">Pendiente 19</a>
+      <a class="btn" href="#">Pendiente 20</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   © 2025 – Profesor Carlos Daniel Godoy
 </footer>
 
 <script>
-/* =======================
-   JAVASCRIPT
-======================= */
-
-function togglePresentaciones(){
-  const pres = document.getElementById("presentaciones");
-  const inicio = document.getElementById("inicio");
-
-  if(pres.style.display === "none"){
-    pres.style.display = "block";
-    inicio.style.display = "none";
-    pres.scrollIntoView({behavior:"smooth"});
-  }else{
-    pres.style.display = "none";
-    inicio.style.display = "block";
-  }
+function ocultarTodo(){
+  document.getElementById("inicio").style.display="none";
+  document.getElementById("presentaciones").style.display="none";
+  document.getElementById("carpeta").style.display="none";
 }
 
 function mostrarInicio(){
-  document.getElementById("presentaciones").style.display = "none";
-  document.getElementById("inicio").style.display = "block";
-  window.scrollTo({top:0, behavior:"smooth"});
+  ocultarTodo();
+  document.getElementById("inicio").style.display="block";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function togglePresentaciones(){
+  ocultarTodo();
+  document.getElementById("presentaciones").style.display="block";
+}
+
+function mostrarCarpeta(){
+  ocultarTodo();
+  document.getElementById("carpeta").style.display="block";
 }
 </script>
 
 </body>
 </html>
-
